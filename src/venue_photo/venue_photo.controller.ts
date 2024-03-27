@@ -7,7 +7,7 @@ import {
   Param,
   Delete,
   UseInterceptors,
-  UploadedFiles,
+  UploadedFile,
 } from "@nestjs/common";
 import { VenuePhotoService } from "./venue_photo.service";
 import { CreateVenuePhotoDto } from "./dto/create-venue_photo.dto";
@@ -19,9 +19,12 @@ export class VenuePhotoController {
   constructor(private readonly venuePhotoService: VenuePhotoService) {}
 
   @Post()
-  @UseInterceptors(FileInterceptor('photo'))
-  async create(@Body() createVenuePhotoDto: CreateVenuePhotoDto, @UploadedFiles() photo: any) {
-    return this.venuePhotoService.create(createVenuePhotoDto, photo);
+  @UseInterceptors(FileInterceptor("photo"))
+  async create(
+    @Body() createVenueDto: CreateVenuePhotoDto,
+    @UploadedFile() photo: any
+  ) {
+    return this.venuePhotoService.create(createVenueDto, photo);
   }
 
   @Get()

@@ -13,7 +13,7 @@ export class VenuePhotoService {
   ) {}
 
   async create(createVenuePhotoDto: CreateVenuePhotoDto, photo: any) {
-    console.log(photo);
+    console.log("photo", photo);
 
     const fileName = await this.fileService.saveFile(photo);
     const event = this.venuePhotoRepo.create({

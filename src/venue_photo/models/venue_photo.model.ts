@@ -7,7 +7,7 @@ import {
   ForeignKey,
   BelongsTo,
 } from "sequelize-typescript";
-import { Venue } from "../../venue/models/venue.model";
+// import { Venue } from "../../venue/models/venue.model";
 
 interface IVenuePhotoCreationAttr {
   venueId: number;
