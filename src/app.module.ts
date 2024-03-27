@@ -41,6 +41,7 @@ import { AdminModule } from "./admin/admin.module";
 import { Admin } from "./admin/model/admin.model";
 import { BookingModule } from './booking/booking.module';
 import { CardModule } from './card/card.module';
+import { FileModule } from "./file/file.module";
 
 @Module({
   imports: [
@@ -98,6 +99,7 @@ import { CardModule } from './card/card.module';
     AdminModule,
     BookingModule,
     CardModule,
+    FileModule,
   ],
 })
 export class AppModule {}

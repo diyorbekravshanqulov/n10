@@ -4,15 +4,24 @@ import { UpdateEventDto } from "./dto/update-event.dto";
 import { InjectModel } from "@nestjs/sequelize";
 import { ApiTags, ApiOperation } from "@nestjs/swagger";
 import { Event } from "./model/event.model";
+import { FileService } from "../file/file.service";
 
 @ApiTags("Event")
 @Injectable()
 export class EventService {
-  constructor(@InjectModel(Event) private eventRepo: typeof Event) {}
+  constructor(
+    @InjectModel(Event) private eventRepo: typeof Event,
+    private readonly fileService: FileService
+  ) {}
 
   @ApiOperation({ summary: "Create a new event" })
-  async create(createEventDto: CreateEventDto) {
-    return this.eventRepo.create(createEventDto);
+  async create(createEventDto: CreateEventDto, photo: any) {
+    console.log(photo);
+
+    const fileName = await this.fileService.saveFile(photo);
+    const event = this.eventRepo.create({ ...createEventDto, photo: fileName });
+
+    return event;
   }
 
   @ApiOperation({ summary: "Retrieve all events" })

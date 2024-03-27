@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  UploadedFile,
+  UseInterceptors,
 } from "@nestjs/common";
 import {
   ApiTags,
@@ -17,6 +19,7 @@ import {
 import { EventService } from "./event.service";
 import { CreateEventDto } from "./dto/create-event.dto";
 import { UpdateEventDto } from "./dto/update-event.dto";
+import { FileInterceptor } from "@nestjs/platform-express";
 
 @ApiTags("event")
 @Controller("event")
@@ -26,8 +29,12 @@ export class EventController {
   @ApiOperation({ summary: "Create an event" })
   @ApiBody({ type: CreateEventDto })
   @Post()
-  async create(@Body() createEventDto: CreateEventDto) {
-    return this.eventService.create(createEventDto);
+  @UseInterceptors(FileInterceptor("photo"))
+  async create(
+    @Body() createEventDto: CreateEventDto,
+    @UploadedFile() photo: any
+  ) {
+    return this.eventService.create(createEventDto, photo);
   }
 
   @ApiOperation({ summary: "Get all events" })
@@ -57,7 +64,7 @@ export class EventController {
   @ApiOperation({ summary: "Delete an event" })
   @ApiParam({ name: "id", type: "string", description: "Event ID" })
   @Delete(":id")
-  async remove(@Param('id') id: string) {
+  async remove(@Param("id") id: string) {
     return this.eventService.remove(+id);
   }
 }
