@@ -2,7 +2,7 @@ import { Body, Controller, HttpCode, HttpStatus, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { LoginDto } from "./dto/login.dto";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
-import { CreateAdminDto } from "src/admin/dto/create-admin.dto";
+import { CreateAdminDto } from "../admin/dto/create-admin.dto";
 
 @ApiTags("Authorization")
 @Controller("auth")

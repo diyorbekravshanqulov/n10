@@ -8,9 +8,9 @@ import {
 import * as bcrypt from "bcrypt";
 import { JwtService } from "@nestjs/jwt";
 import { LoginDto } from "./dto/login.dto";
-import { Admin } from "src/admin/model/admin.model";
-import { CreateAdminDto } from "src/admin/dto/create-admin.dto";
-import { AdminService } from "src/admin/admin.service";
+import { AdminService } from "../admin/admin.service";
+import { CreateAdminDto } from "../admin/dto/create-admin.dto";
+import { Admin } from "../admin/model/admin.model";
 
 @Injectable()
 export class AuthService {

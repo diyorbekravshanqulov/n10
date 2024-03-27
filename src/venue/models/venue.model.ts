@@ -7,10 +7,10 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { Seat } from "src/seat/model/seat.model";
-import { SeatType } from "src/seat_type/model/seat_type.model";
-import { VTypeVenue } from "src/v-type-venue/model/v-type_venue.model";
-import { VenueType } from "src/venue_type/models/venue_type.model";
+import { VTypeVenue } from "../../v-type-venue/model/v-type_venue.model";
+import { VenueType } from "../../venue_type/models/venue_type.model";
+import { SeatType } from "../../seat_type/model/seat_type.model";
+import { Seat } from "../../seat/model/seat.model";
 
 interface VenueCreationAttr {
   name: string;

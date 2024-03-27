@@ -7,7 +7,7 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { Customer } from "src/customer/model/customer.model";
+import { Customer } from "../../customer/model/customer.model";
 
 interface CustomerCardAttributes {
   id: number;

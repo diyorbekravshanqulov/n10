@@ -6,9 +6,9 @@ import {
   Model,
   Table,
 } from "sequelize-typescript";
-import { SeatType } from "src/seat_type/model/seat_type.model";
-import { Venue } from "src/venue/models/venue.model";
 import { ApiProperty } from "@nestjs/swagger";
+import { Venue } from "../../venue/models/venue.model";
+import { SeatType } from "../../seat_type/model/seat_type.model";
 
 interface SeatCreationAttr {
   sector: number;

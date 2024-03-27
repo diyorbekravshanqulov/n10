@@ -5,9 +5,9 @@ import {
   Model,
   Table,
 } from "sequelize-typescript";
-import { Seat } from "src/seat/model/seat.model";
-import { Venue } from "src/venue/models/venue.model";
 import { ApiProperty } from "@nestjs/swagger";
+import { Venue } from "../../venue/models/venue.model";
+import { Seat } from "../../seat/model/seat.model";
 
 interface SeatTypeCreationAttr {
   name: string;

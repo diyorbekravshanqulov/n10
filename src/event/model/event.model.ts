@@ -7,9 +7,9 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { EventType } from "src/event_type/model/event_type.model";
-import { HumanCategory } from "src/human_category/models/human_category.model";
-import { Venue } from "src/venue/models/venue.model";
+import { EventType } from "../../event_type/model/event_type.model";
+import { HumanCategory } from "../../human_category/models/human_category.model";
+import { Venue } from "../../venue/models/venue.model";
 
 interface EventCreationAttr {
   name: string;

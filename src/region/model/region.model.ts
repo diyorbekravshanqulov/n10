@@ -5,9 +5,9 @@ import {
   Model,
   Table,
 } from "sequelize-typescript";
-import { Customer } from "src/customer/model/customer.model";
-import { CustomerAddress } from "src/customer_address/model/customer_address.model";
 import { ApiProperty } from "@nestjs/swagger";
+import { Customer } from "../../customer/model/customer.model";
+import { CustomerAddress } from "../../customer_address/model/customer_address.model";
 
 interface RegionCreationAttr {
   name: string;

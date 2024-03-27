@@ -7,10 +7,10 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { Country } from "src/country/model/country.model";
-import { Customer } from "src/customer/model/customer.model";
-import { Region } from "src/region/model/region.model";
-import { Dictrict } from "src/dictrict/model/dictrict.model";
+import { Customer } from "../../customer/model/customer.model";
+import { Country } from "../../country/model/country.model";
+import { Region } from "../../region/model/region.model";
+import { Dictrict } from "../../dictrict/model/dictrict.model";
 
 interface CustomerAddressAttributes {
   id: number;

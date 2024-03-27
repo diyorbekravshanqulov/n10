@@ -7,10 +7,10 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { Event } from "src/event/model/event.model";
-import { Seat } from "src/seat/model/seat.model";
-import { Status } from "src/status/model/status.model";
-import { TicketType } from "src/ticket_type/model/ticket_type.model";
+import { Status } from "../../status/model/status.model";
+import { TicketType } from "../../ticket_type/model/ticket_type.model";
+import { Event } from "../../event/model/event.model";
+import { Seat } from "../../seat/model/seat.model";
 
 interface TicketAttributes {
   id: number;

@@ -6,8 +6,8 @@ import {
   Table,
 } from "sequelize-typescript";
 import { ApiProperty } from "@nestjs/swagger";
-import { Customer } from "src/customer/model/customer.model";
-import { CustomerAddress } from "src/customer_address/model/customer_address.model";
+import { Customer } from "../../customer/model/customer.model";
+import { CustomerAddress } from "../../customer_address/model/customer_address.model";
 
 interface DistrictCreationAttr {
   name: string;

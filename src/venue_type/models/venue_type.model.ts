@@ -6,8 +6,8 @@ import {
   Model,
   Table,
 } from "sequelize-typescript";
-import { VTypeVenue } from "src/v-type-venue/model/v-type_venue.model";
-import { Venue } from "src/venue/models/venue.model";
+import { Venue } from "../../venue/models/venue.model";
+import { VTypeVenue } from "../../v-type-venue/model/v-type_venue.model";
 
 interface IVenueTypeCreationAttr {
   name: string;

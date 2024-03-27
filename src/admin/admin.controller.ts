@@ -13,9 +13,9 @@ import { CreateAdminDto } from "./dto/create-admin.dto";
 import { UpdateAdminDto } from "./dto/update-admin.dto";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ActivateAdminDto } from "./dto/activate.dto";
-import { JwtAuthGuard } from "src/guards/jwt-auth.guard";
-import { SelfGuard } from "src/guards/self.guard";
 import { CreatorAdminDto } from "./dto/creator.dto";
+import { SelfGuard } from "../guards/creator.guard";
+import { JwtAuthGuard } from "../guards/jwt-auth.guard";
 
 @ApiTags("Districts")
 @Controller("admin")
