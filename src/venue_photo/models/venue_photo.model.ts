@@ -31,7 +31,7 @@ export class VenuePhoto extends Model<VenuePhoto, IVenuePhotoCreationAttr> {
     example: 1,
     description: "The ID of the venue this photo belongs to",
   })
-  @ForeignKey(() => Venue)
+  // @ForeignKey(() => Venue)
   @Column({
     type: DataType.INTEGER,
   })
@@ -46,6 +46,6 @@ export class VenuePhoto extends Model<VenuePhoto, IVenuePhotoCreationAttr> {
   })
   url: string;
 
-  @BelongsTo(() => Venue)
-  venue: Venue;
+  // @BelongsTo(() => Venue)
+  // venue: Venue;
 }

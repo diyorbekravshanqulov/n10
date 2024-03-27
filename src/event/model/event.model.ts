@@ -98,21 +98,21 @@ export class Event extends Model<Event, EventCreationAttr> {
   info: string;
 
   @ApiProperty({ example: 1, description: "ID of the event type" })
-  @ForeignKey(() => EventType)
+  // @ForeignKey(() => EventType)
   @Column({
     type: DataType.INTEGER,
   })
   eventTypeId: number;
 
   @ApiProperty({ example: 1, description: "ID of the human category" })
-  @ForeignKey(() => HumanCategory)
+  // @ForeignKey(() => HumanCategory)
   @Column({
     type: DataType.INTEGER,
   })
   humanCategoryId: number;
 
   @ApiProperty({ example: 1, description: "ID of the venue" })
-  @ForeignKey(() => Venue)
+  // @ForeignKey(() => Venue)
   @Column({
     type: DataType.INTEGER,
   })
@@ -133,12 +133,12 @@ export class Event extends Model<Event, EventCreationAttr> {
   })
   releaseDate: Date;
 
-  @BelongsTo(() => EventType)
-  eventType: EventType;
+  // @BelongsTo(() => EventType)
+  // eventType: EventType;
 
-  @BelongsTo(() => HumanCategory)
-  humanCategory: HumanCategory;
+  // @BelongsTo(() => HumanCategory)
+  // humanCategory: HumanCategory;
 
-  @BelongsTo(() => Venue)
-  venue: Venue;
+  // @BelongsTo(() => Venue)
+  // venue: Venue;
 }
