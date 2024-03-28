@@ -31,6 +31,6 @@ export class CustomerService {
   async remove(id: number) {
     const cRows = await this.customerRepo.destroy({ where: { id } });
     if (cRows == 0) return "Not found";
-    return cRows;
+    return "successfully removed";
   }
 }

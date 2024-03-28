@@ -27,13 +27,13 @@ export class AdminService {
       where: { id },
       returning: true,
     });
-    return admin;
+    return admin[1][0];
   }
 
   async remove(id: number) {
     const adminRows = await this.adminRepo.destroy({ where: { id } });
     if (adminRows == 0) return "Not found";
-    return adminRows;
+    return "successfully removed";
   }
 
   async getAdminByLogin(login: string) {
