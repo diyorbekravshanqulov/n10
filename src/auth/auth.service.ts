@@ -30,33 +30,38 @@ export class AuthService {
       );
     }
 
-    const hashedPassword = await bcrypt.hash(createAdminDto.hashed_password, 7);
-    createAdminDto.hashed_password = hashedPassword;
+    const hashedPassword = await bcrypt.hash(createAdminDto.password, 7);
+    createAdminDto.password = hashedPassword;
 
     const newUser = await this.adminService.create(createAdminDto);
     return this.genarateToken(newUser);
   }
 
-  private async genarateToken(user: Admin) {
-    const payload = { sub: user.id, name: user.name, login: user.login, creator: user.isCreator };
+  private async genarateToken(admin: Admin) {
+    const payload = {
+      sub: admin.id,
+      name: admin.name,
+      login: admin.login,
+      creator: admin.isCreator,
+    };
 
     return { token: this.jwtService.sign(payload) };
   }
 
   async login(loginDto: LoginDto) {
-    const user = await this.adminService.getAdminByLogin(loginDto.login);
-    if (!user) {
+    const admin = await this.adminService.getAdminByLogin(loginDto.login);
+    if (!admin) {
       throw new UnauthorizedException("wrong login or passowrd");
     }
 
     const validPassword = await bcrypt.compare(
       loginDto.password,
-      user.hashed_password
+      admin.hashed_password
     );
 
     if (!validPassword) {
       throw new UnauthorizedException("wrong login or password");
     }
-    return this.genarateToken(user);
+    return this.genarateToken(admin);
   }
 }

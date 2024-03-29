@@ -14,13 +14,5 @@ export class UpdateAdminDto extends PartialType(CreateAdminDto) {
 
   @ApiProperty()
   @IsString()
-  hashed_password?: string;
-
-  @ApiProperty()
-  @IsBoolean()
-  isActive?: boolean;
-
-  @ApiProperty()
-  @IsBoolean()
-  isCreator?: boolean;
+  password?: string;
 }

@@ -6,7 +6,5 @@ export const adminStub = (): Partial<Admin> => {
     name: "Komil",
     login: "komil1",
     hashed_password: "k0m1l",
-    isActive: true,
-    isCreator: true,
   };
 };

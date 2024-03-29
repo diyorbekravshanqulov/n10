@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { CreateAdminDto } from "./dto/create-admin.dto";
 import { UpdateAdminDto } from "./dto/update-admin.dto";
 import { ActivateAdminDto } from "./dto/activate.dto";
@@ -8,12 +8,13 @@ import { CreatorAdminDto } from "./dto/creator.dto";
 
 @Injectable()
 export class AdminService {
-  constructor(@InjectModel(Admin) private adminRepo: typeof Admin) {}
+  constructor(
+    @InjectModel(Admin) private adminRepo: typeof Admin
+  ) {}
 
   async create(createAdminDto: CreateAdminDto) {
     return this.adminRepo.create(createAdminDto);
   }
-
   async findAll() {
     return this.adminRepo.findAll();
   }

@@ -38,9 +38,7 @@ describe("User controller", () => {
         createAdminDto = {
           name: adminStub().name,
           login: adminStub().login,
-          hashed_password: adminStub().hashed_password,
-          isActive: adminStub().isActive,
-          isCreator: adminStub().isCreator,
+          password: adminStub().hashed_password,
         };
         admin = await adminController.create(createAdminDto);
         console.log(admin);
@@ -100,9 +98,7 @@ describe("User controller", () => {
         updateAdminDto = {
           name: adminStub().name,
           login: adminStub().login,
-          hashed_password: adminStub().hashed_password,
-          isActive: adminStub().isActive,
-          isCreator: adminStub().isCreator,
+          password: adminStub().hashed_password,
         };
         admin = await adminController.update(String(id), updateAdminDto);
         console.log(admin);

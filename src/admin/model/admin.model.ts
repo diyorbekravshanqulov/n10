@@ -1,5 +1,12 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import {
+  BelongsToMany,
+  Column,
+  DataType,
+  Model,
+  Table,
+} from "sequelize-typescript";
+
 
 interface AdminCreatorAttr {
   name: string;
@@ -46,7 +53,7 @@ export class Admin extends Model<Admin, AdminCreatorAttr> {
     type: DataType.BOOLEAN,
   })
   isActive: boolean;
-  
+
   @ApiProperty({ example: false, description: "is creator admin" })
   @Column({
     type: DataType.BOOLEAN,
